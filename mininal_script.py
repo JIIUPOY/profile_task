@@ -12,6 +12,7 @@ b_date = date_all - timedelta(days= d)
 
 end_cols = ['email', 'create_count', 'read_count', 'update_count', 'delete_count']
 
+
 dir_name_out = 'output'
 dir_name_in = 'input'
 data = pd.DataFrame()

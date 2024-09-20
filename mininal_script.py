@@ -15,9 +15,10 @@ end_cols = ['email', 'create_count', 'read_count', 'update_count', 'delete_count
 
 dir_name_out = 'output'
 dir_name_in = 'input'
+
 data = pd.DataFrame()
 for index in range(d):
-      dt = pd.read_csv(
+      dt = pd.read_csv(#добавить проверку, что есть файлы до определенной даты, иначе выводить ошибку с предложением на вывод минимальной даты
             os.path.join(dir_name_in, f'{(b_date + timedelta(days= index))}.csv'),
             sep=',', names=['email', 'action', 'dt'])
       data = pd.concat([data, dt])

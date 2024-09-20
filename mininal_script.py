@@ -13,7 +13,6 @@ b_date: datetime = date_all - timedelta(days= d)
 
 end_cols: list[str] = ['email', 'create_count', 'read_count', 'update_count', 'delete_count']
 
-
 dir_name_out: str = 'output'
 dir_name_in: str = 'input'
 

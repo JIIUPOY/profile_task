@@ -38,6 +38,12 @@ if __name__ == "__main__":
     for i in range(days_cnt):
         current_dt = dt + datetime.timedelta(days=i)
         filepath = os.path.join(dirname, f"{current_dt.strftime('%Y-%m-%d')}.csv")
+
+        if os.path.exists(filepath):
+            pass;
+
+
+
         with open(filepath, 'w') as out:
             out.write("\n".join(
                 f"{random.choice(emails)},{random.choice(ACTION_TYPES)},{current_dt + datetime.timedelta(seconds=random.randrange(0, 60 * 60 * 24))}"

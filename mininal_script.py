@@ -11,8 +11,6 @@ d: int = 7
 date_all: datetime = datetime.strptime(str(sys.argv[1]), '%Y-%m-%d').date()
 b_date: datetime = date_all - timedelta(days= d)
 
-end_cols: list[str] = ['email', 'create_count', 'read_count', 'update_count', 'delete_count']
-
 dir_name_out: str = 'output'
 dir_name_in: str = 'input'
 
@@ -45,3 +43,7 @@ if not os.path.exists(dir_name_out):
 
 path: str = os.path.join(dir_name_out, f'{date_all}.csv')
 end_data.to_csv(path, index= False)
+
+
+if __name__ == "__main__":
+      print(1)

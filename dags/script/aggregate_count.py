@@ -25,9 +25,9 @@ class DataAggregator:
             os.makedirs(dir)
         dt.to_csv(output_path, index=False)
 
-    def create_counted_data(self, dt: pd.DataFrame) -> pd.DataFrame:
-        data = self.count_actions(dt)
-        return data
+    # def create_counted_data(self, dt: pd.DataFrame) -> pd.DataFrame:
+    #     data = self.count_actions(dt)
+    #     return data
 
     def create_data(self):
         data = pd.DataFrame()
@@ -40,7 +40,7 @@ class DataAggregator:
                 if not self.check_files_existance(self.temp_dir, day):
                     file_path = os.path.join(self.dir_name_in, f'{day.strftime("%Y-%m-%d")}.csv')
                     day_dt = pd.read_csv(file_path, sep=',', names=['email', 'action', 'dt'])
-                    dt = self.create_counted_data(day_dt)
+                    dt = self.count_actions(day_dt)
                     self.save_data(self.temp_dir, dt, day)
                     data = pd.concat([data, day_dt], ignore_index=True)
                     data['dt'] = pd.to_datetime(data['dt']).dt.date
@@ -49,7 +49,7 @@ class DataAggregator:
                     path = os.path.join(self.temp_dir, f'{day.strftime("%Y-%m-%d")}.csv')
                     existed_files.append(pd.read_csv(path))
         if not data.empty:
-            data = self.create_counted_data(data)
+            data = self.count_actions(data)
             existed_files.append(data)
             end_date = self.merge_sum_data(existed_files)
             self.save_data(self.dir_name_out, end_date, self.date_all)

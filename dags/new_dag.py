@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.decorators import task
-from script.test_oop import DataAggregator
+from script.aggregate_count import DataAggregator
 
 with DAG(
         'aggr_count',
@@ -10,8 +10,8 @@ with DAG(
             'retries': 1,
             'retries_delay': timedelta(minutes=3),
         },
-        description='Описание',
-        schedule_interval='0 * * * *',  # Запуск каждый час
+        description='Вычисление агрегированных показателей за 7 дней',
+        schedule_interval='0 7 * * *',
         start_date=datetime(2024, 9, 23, 10, 0),
         catchup=False,
 ) as dag:

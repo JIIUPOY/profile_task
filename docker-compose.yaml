@@ -21,7 +21,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
     - ${AIRFLOW_PROJ_DIR:-.}/input:/opt/airflow/input
     - ${AIRFLOW_PRoOJ_DIR:-.}/output:/opt/airflow/output
-    - ${AIRFLOW_PROJ_DIR:-.}/inter:/opt/airflow/inter
+    - ${AIRFLOW_PROJ_DIR:-.}/temp:/opt/airflow/temp
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
@@ -188,7 +188,7 @@ services:
       - ${AIRFLOW_PROJ_DIR:-.}:/sources
       - ${AIRFLOW_PROJ_DIR:-.}/input:/opt/airflow/input
       - ${AIRFLOW_PROJ_DIR:-.}/output:/opt/airflow/output
-      - ${AIRFLOW_PROJ_DIR:-.}/inter:/opt/airflow/inter
+      - ${AIRFLOW_PROJ_DIR:-.}/temp:/opt/airflow/temp
 
   airflow-cli:
     <<: *airflow-common

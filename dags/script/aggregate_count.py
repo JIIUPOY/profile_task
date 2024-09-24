@@ -25,10 +25,6 @@ class DataAggregator:
             os.makedirs(dir)
         dt.to_csv(output_path, index=False)
 
-    # def create_counted_data(self, dt: pd.DataFrame) -> pd.DataFrame:
-    #     data = self.count_actions(dt)
-    #     return data
-
     def create_data(self):
         data = pd.DataFrame()
         existed_files = []

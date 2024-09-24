@@ -18,7 +18,7 @@ with DAG(
     @task(task_id='my_dag')
     def new_func(exec_date: str):
         required_date = datetime.strptime(exec_date.strip(), "%Y-%m-%d")
-        DataAggregator(date_all=required_date).run();
+        DataAggregator(date_all=required_date).create_data()
 
 
     new_func(' {{ ds }} ')

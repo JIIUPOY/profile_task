@@ -7171,3 +7171,10 @@ IndentationError: expected an indented block after class definition on line 9
 [2024-09-23T19:44:51.254+0000] {logging_mixin.py:190} INFO - [2024-09-23T19:44:51.253+0000] {dag.py:3229} INFO - Sync 1 DAGs
 [2024-09-23T19:44:51.288+0000] {logging_mixin.py:190} INFO - [2024-09-23T19:44:51.288+0000] {dag.py:4156} INFO - Setting next_dagrun for aggr_count to 2024-09-23 18:00:00+00:00, run_after=2024-09-23 19:00:00+00:00
 [2024-09-23T19:44:51.324+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.463 seconds
+[2024-09-23T19:45:21.743+0000] {processor.py:186} INFO - Started process (PID=1635) to work on /opt/airflow/dags/new_dag.py
+[2024-09-23T19:45:21.746+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/new_dag.py for tasks to queue
+[2024-09-23T19:45:21.751+0000] {logging_mixin.py:190} INFO - [2024-09-23T19:45:21.750+0000] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/new_dag.py
+[2024-09-23T19:45:22.101+0000] {processor.py:925} INFO - DAG(s) 'aggr_count' retrieved from /opt/airflow/dags/new_dag.py
+[2024-09-23T19:45:22.163+0000] {logging_mixin.py:190} INFO - [2024-09-23T19:45:22.161+0000] {dag.py:3229} INFO - Sync 1 DAGs
+[2024-09-23T19:45:22.224+0000] {logging_mixin.py:190} INFO - [2024-09-23T19:45:22.224+0000] {dag.py:4156} INFO - Setting next_dagrun for aggr_count to 2024-09-23 19:00:00+00:00, run_after=2024-09-23 20:00:00+00:00
+[2024-09-23T19:45:22.254+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/new_dag.py took 0.526 seconds
